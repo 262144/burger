@@ -1,0 +1,70 @@
+<div class='container'>
+
+  <!-- BEGIN 1st row -->
+  <div class='row'>
+    <div class='col-xs-6 col-sm-4 col-md-3 left-col'>
+      <img src='/assets/img/burger.png' alt='burger'>
+    </div>  <!-- END left column -->
+    <div class='col-xs-6 col-sm-4 col-md-6' id='title'>
+      <h1 id='eat-da-burger'>EAT DA BURGER!</h1>
+    </div>
+    <div class='col-xs-12 col-sm-4 col-md-3 right-col'>
+      <form class='create-update-form' action='/' method='POST'>
+        <label>
+          <br><br>
+          <h4>Enter the Name of a Burger:</h4>
+        </label>
+        <br>
+        <input type='text' name='name'>
+        <br><br>
+        <button class="btn btn-default" type="submit">Add a Burger</button>
+      </form>
+    </div>
+    <!-- END right column -->
+  </div>   <!-- END of row -->
+
+  <!-- BEGIN 2nd row -->
+  <div class='row'>
+
+    <!-- begin burgers to devour -->  
+    <div class='col-xs-12 col-md-7 ' id='left-col'>
+      <h3>Burgers to Devour :)</h3>
+      <div class='row' id='inner-row'>
+
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <div class='col-xs-3'>
+          <form action='/{{this.id}}?_method=PUT' method='POST'>
+            <input type='hidden' name='devoured' value='true'>
+            <button type='submit' class='btn btn-danger'>DEVOUR</button>
+          </form>
+        </div>
+        <div class='col-xs-9'>
+          <div class="well well-sm"> {{this.burger_name}}</div>
+        </div>
+        {{/unless}}
+        {{/each}}
+
+      </div>
+    </div>
+    <!-- END burgers to devour -->
+
+
+    <!-- BEGIN eaten burgers -->
+    <div class='col-xs-12 col-md-5' id='right-col'>
+    <h3>Eaten Burgers :(</h3>
+
+      {{#each burgers}}
+      {{#if this.devoured}}
+      <div class='col-xs-12'>
+        <div class="well well-sm">{{this.burger_name}}</div>
+      </div>
+      {{/if}}
+      {{/each}}
+
+    </div>
+    <!-- END eaten burgers -->    
+  </div>
+  <!-- END 2nd row -->
+</div>
+<!-- END container -->

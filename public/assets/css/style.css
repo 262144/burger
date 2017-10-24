@@ -1,0 +1,65 @@
+body {
+	font-family: Comic Sans MS;
+}
+
+img {
+	margin-top: 20px;
+	height: 210px;
+}
+
+h1 {
+	font-size: 45px;
+	font-weight: bold;
+}
+
+#title {
+	height: 210px;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+/*h5 {
+	margin-top: 75px;
+	text-align: left;
+}*/
+
+#left-col {
+	text-align: right;
+	margin-top: 30px;
+}
+
+#right-col {
+	text-align: left;
+	margin-top: 30px;
+}
+
+.form-group {
+	text-align: left;
+}
+
+
+.row, h3 {
+	text-align: center;
+}
+
+h2 {
+	color: red;
+}
+
+body {
+	background-color:  #ffc000;
+}
+
+.well {
+	width: 90%;
+	float: left;
+}
+
+.form-control {
+	width: 300%;
+	min-height: 100px;
+}
